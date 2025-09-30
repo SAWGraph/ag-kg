@@ -1,0 +1,330 @@
+@prefix ag: <http://w3id.org/sawgraph/v1/ag#> .
+@prefix kwgr: <http://w3id.org/sawgraph/v1/kwgr#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+ag:cropCategory.FeedCrop a ag:cropCategory,
+        owl:NamedIndividual ;
+    rdfs:label "Crop Category for FeedCrop"^^xsd:string .
+
+ag:cropCategory.FiberCrop a ag:cropCategory,
+        owl:NamedIndividual ;
+    rdfs:label "Crop Category for FiberCrop"^^xsd:string .
+
+ag:cropCategory.FoodCrop a ag:cropCategory,
+        owl:NamedIndividual ;
+    rdfs:label "Crop Category for FoodCrop"^^xsd:string .
+
+ag:cropCategory.IndustrialCrop a ag:cropCategory,
+        owl:NamedIndividual ;
+    rdfs:label "Crop Category for IndustrialCrop"^^xsd:string .
+
+ag:cropCategory.OilCrop a ag:cropCategory,
+        owl:NamedIndividual ;
+    rdfs:label "Crop Category for OilCrop"^^xsd:string .
+
+ag:cropCategory.OrnamentalCrop a ag:cropCategory,
+        owl:NamedIndividual ;
+    rdfs:label "Crop Category for OrnamentalCrop"^^xsd:string .
+
+ag:cropSubCategory.Fruit a ag:cropSubCategory,
+        owl:NamedIndividual ;
+    rdfs:label "Crop Sub Category for Fruit"^^xsd:string .
+
+ag:cropSubCategory.FruitingVegetable a ag:cropSubCategory,
+        owl:NamedIndividual ;
+    rdfs:label "Crop Sub Category for FruitingVegetable"^^xsd:string .
+
+ag:cropSubCategory.Grain a ag:cropSubCategory,
+        owl:NamedIndividual ;
+    rdfs:label "Crop Sub Category for Grain"^^xsd:string .
+
+ag:cropSubCategory.LeafyVegetable a ag:cropSubCategory,
+        owl:NamedIndividual ;
+    rdfs:label "Crop Sub Category for LeafyVegetable"^^xsd:string .
+
+ag:cropSubCategory.LegumeOrNut a ag:cropSubCategory,
+        owl:NamedIndividual ;
+    rdfs:label "Crop Sub Category for LegumeOrNut"^^xsd:string .
+
+ag:cropSubCategory.RootOrTuberVegetable a ag:cropSubCategory,
+        owl:NamedIndividual ;
+    rdfs:label "Crop Sub Category for RootOrTuberVegetable"^^xsd:string .
+
+ag:cropSubCategory.Vegetable a ag:cropSubCategory,
+        owl:NamedIndividual ;
+    rdfs:label "Crop Sub Category for Vegetable"^^xsd:string .
+
+ag:cropCategory rdf:type owl:Class ;
+                         rdfs:label "Crop Category" .
+
+ag:cropSubCategory rdf:type owl:Class ;
+                         rdfs:label "Crop Sub-Category" ;
+		   rdfs:subClassOf ag:cropCategory .
+
+kwgr:croplandObservableProperty.1 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+
+kwgr:croplandObservableProperty.2 ag:hasCropCategory ag:cropCategory.FiberCrop .
+
+kwgr:croplandObservableProperty.3 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+
+kwgr:croplandObservableProperty.4 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+
+kwgr:croplandObservableProperty.5 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+
+kwgr:croplandObservableProperty.6 ag:hasCropCategory ag:cropCategory.OilCrop .
+
+kwgr:croplandObservableProperty.10 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.LegumeOrNut .
+
+kwgr:croplandObservableProperty.11 ag:hasCropCategory ag:cropCategory.IndustrialCrop .
+
+kwgr:croplandObservableProperty.12 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+
+kwgr:croplandObservableProperty.13 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+
+kwgr:croplandObservableProperty.14 ag:hasCropCategory ag:cropCategory.FoodCrop .
+
+kwgr:croplandObservableProperty.21 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+
+kwgr:croplandObservableProperty.22 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+
+kwgr:croplandObservableProperty.23 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+
+kwgr:croplandObservableProperty.24 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+
+kwgr:croplandObservableProperty.25 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+
+kwgr:croplandObservableProperty.26 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+
+kwgr:croplandObservableProperty.27 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+
+kwgr:croplandObservableProperty.28 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+
+kwgr:croplandObservableProperty.29 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+
+kwgr:croplandObservableProperty.30 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+
+kwgr:croplandObservableProperty.31 ag:hasCropCategory ag:cropCategory.OilCrop .
+
+kwgr:croplandObservableProperty.32 ag:hasCropCategory ag:cropCategory.FoodCrop .
+
+kwgr:croplandObservableProperty.33 ag:hasCropCategory ag:cropCategory.OilCrop .
+
+kwgr:croplandObservableProperty.34 ag:hasCropCategory ag:cropCategory.OilCrop .
+
+kwgr:croplandObservableProperty.35 ag:hasCropCategory ag:cropCategory.OilCrop .
+
+kwgr:croplandObservableProperty.36 ag:hasCropCategory ag:cropCategory.FeedCrop .
+
+kwgr:croplandObservableProperty.37 ag:hasCropCategory ag:cropCategory.FeedCrop .
+
+kwgr:croplandObservableProperty.38 ag:hasCropCategory ag:cropCategory.FeedCrop .
+
+kwgr:croplandObservableProperty.39 ag:hasCropCategory ag:cropCategory.FoodCrop .
+
+kwgr:croplandObservableProperty.41 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.RootOrTuberVegetable .
+
+kwgr:croplandObservableProperty.42 ag:hasCropCategory ag:cropCategory.FoodCrop .
+
+kwgr:croplandObservableProperty.43 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.RootOrTuberVegetable .
+
+kwgr:croplandObservableProperty.45 ag:hasCropCategory ag:cropCategory.FoodCrop .
+
+kwgr:croplandObservableProperty.46 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.RootOrTuberVegetable .
+
+kwgr:croplandObservableProperty.47 ag:hasCropCategory ag:cropCategory.FoodCrop .
+
+kwgr:croplandObservableProperty.48 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+
+kwgr:croplandObservableProperty.49 ag:hasCropCategory ag:cropCategory.FoodCrop .
+
+kwgr:croplandObservableProperty.50 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.FruitingVegetable .
+
+kwgr:croplandObservableProperty.51 ag:hasCropCategory ag:cropCategory.FoodCrop .
+
+kwgr:croplandObservableProperty.52 ag:hasCropCategory ag:cropCategory.FoodCrop .
+
+kwgr:croplandObservableProperty.53 ag:hasCropCategory ag:cropCategory.FoodCrop .
+
+kwgr:croplandObservableProperty.54 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.FruitingVegetable .
+
+kwgr:croplandObservableProperty.55 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+
+kwgr:croplandObservableProperty.58 ag:hasCropCategory ag:cropCategory.FeedCrop .
+
+kwgr:croplandObservableProperty.60 ag:hasCropCategory ag:cropCategory.FeedCrop .
+
+kwgr:croplandObservableProperty.66 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+
+kwgr:croplandObservableProperty.67 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+
+kwgr:croplandObservableProperty.68 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+
+kwgr:croplandObservableProperty.69 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+
+kwgr:croplandObservableProperty.70 ag:hasCropCategory ag:cropCategory.OrnamentalCrop .
+
+kwgr:croplandObservableProperty.72 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+
+kwgr:croplandObservableProperty.74 ag:hasCropCategory ag:cropCategory.FoodCrop .
+
+kwgr:croplandObservableProperty.75 ag:hasCropCategory ag:cropCategory.FoodCrop .
+
+kwgr:croplandObservableProperty.76 ag:hasCropCategory ag:cropCategory.FoodCrop .
+
+kwgr:croplandObservableProperty.77 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+
+kwgr:croplandObservableProperty.204 ag:hasCropCategory ag:cropCategory.FoodCrop .
+
+kwgr:croplandObservableProperty.205 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+
+kwgr:croplandObservableProperty.206 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.RootOrTuberVegetable .
+
+kwgr:croplandObservableProperty.207 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Vegetable .
+
+kwgr:croplandObservableProperty.208 ag:hasCropCategory ag:cropCategory.FoodCrop .
+
+kwgr:croplandObservableProperty.209 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+
+kwgr:croplandObservableProperty.210 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+
+kwgr:croplandObservableProperty.211 ag:hasCropCategory ag:cropCategory.OilCrop .
+
+kwgr:croplandObservableProperty.212 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+
+kwgr:croplandObservableProperty.213 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+
+kwgr:croplandObservableProperty.214 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Vegetable .
+
+kwgr:croplandObservableProperty.215 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+
+kwgr:croplandObservableProperty.216 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.FruitingVegetable .
+
+kwgr:croplandObservableProperty.217 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+
+kwgr:croplandObservableProperty.218 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+
+kwgr:croplandObservableProperty.220 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+
+kwgr:croplandObservableProperty.221 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+
+kwgr:croplandObservableProperty.222 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.FruitingVegetable .
+
+kwgr:croplandObservableProperty.223 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+
+kwgr:croplandObservableProperty.225 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+
+kwgr:croplandObservableProperty.226 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+
+kwgr:croplandObservableProperty.227 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.LeafyVegetable .
+
+kwgr:croplandObservableProperty.228 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+
+kwgr:croplandObservableProperty.229 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.FruitingVegetable .
+
+kwgr:croplandObservableProperty.230 ag:hasCropCategory ag:cropCategory.FoodCrop .
+
+kwgr:croplandObservableProperty.231 ag:hasCropCategory ag:cropCategory.FoodCrop .
+
+kwgr:croplandObservableProperty.233 ag:hasCropCategory ag:cropCategory.FoodCrop .
+
+kwgr:croplandObservableProperty.234 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+
+kwgr:croplandObservableProperty.235 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+
+kwgr:croplandObservableProperty.236 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+
+kwgr:croplandObservableProperty.237 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+
+kwgr:croplandObservableProperty.240 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+
+kwgr:croplandObservableProperty.241 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+
+kwgr:croplandObservableProperty.242 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+
+kwgr:croplandObservableProperty.243 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.LeafyVegetable .
+
+kwgr:croplandObservableProperty.244 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Vegetable .
+
+kwgr:croplandObservableProperty.245 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.LeafyVegetable .
+
+kwgr:croplandObservableProperty.246 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.RootOrTuberVegetable .
+
+kwgr:croplandObservableProperty.247 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.RootOrTuberVegetable .
+
+kwgr:croplandObservableProperty.248 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.FruitingVegetable .
+
+kwgr:croplandObservableProperty.249 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.FruitingVegetable .
+
+kwgr:croplandObservableProperty.250 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+
+kwgr:croplandObservableProperty.254 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
