@@ -1,0 +1,141 @@
+Code,"Type
+(kwgr:croplandObservableProperty)","Category 
+(ag:
+hasCropCategory)","Sub-category
+(ag:observedCropSubCategory)"
+0,Background,,
+1,"Corn
+","Food Crop
+",Grain
+2,Cotton,Fiber Crop,
+3,Rice,Food Crop,Grain
+4,Sorghum,Food Crop,Grain
+5,Soybeans,Food Crop,Grain
+6,Sunflower,Oil Crop,
+10,Peanuts,Food Crop,Legume Or Nut
+11,Tobacco,Industrial Crop,
+12,Sweet Corn,Food Crop,Grain
+13,Pop or Orn Corn,Food Crop,Grain
+14,Mint,Food Crop,
+21,Barley,Food Crop,Grain
+22,Durum Wheat,Food Crop,Grain
+23,Spring Wheat,Food Crop,Grain
+24,Winter Wheat,Food Crop,Grain
+25,Other Small Grains,Food Crop,Grain
+26,Dbl Crop WinWht/Soybeans,Food Crop,Grain
+27,Rye,Food Crop,Grain
+28,Oats,Food Crop,Grain
+29,Millet,Food Crop,Grain
+30,Speltz,Food Crop,Grain
+31,Canola,Oil Crop,
+32,Flaxseed,Food Crop,
+33,Safflower,Oil Crop,
+34,Rape Seed,Oil Crop,
+35,Mustard,Oil Crop,
+36,Alfalfa,Feed Crop,
+37,Other Hay/Non Alfalfa,Feed Crop,
+38,Camelina,Feed Crop,
+39,Buckwheat,Food Crop,
+41,Sugarbeets,Food Crop,Root Or Tuber Vegetable
+42,Dry Beans,Food Crop,
+43,Potatoes,Food Crop,Root Or Tuber Vegetable
+44,Other Crops,,
+45,Sugarcane,Food Crop,
+46,Sweet Potatoes,Food Crop,Root Or Tuber Vegetable
+47,Misc Vegs & Fruits,Food Crop,
+48,Watermelons,Food Crop,Fruit
+49,Onions,Food Crop,
+50,Cucumbers,Food Crop,Fruiting Vegetable
+51,Chick Peas,Food Crop,
+52,Lentils,Food Crop,
+53,Peas,Food Crop,
+54,Tomatoes,Food Crop,Fruiting Vegetable
+55,Caneberries,Food Crop,Fruit
+56,Hops,,
+57,Herbs,,
+58,Clover/Wildflowers,Feed Crop,
+59,Sod/Grass Seed,,
+60,Switchgrass,Feed Crop,
+61,Fallow/Idle Cropland,,
+63,Forest,,
+64,Shrubland,,
+65,Barren,,
+66,Cherries,Food Crop,Fruit
+67,Peaches,Food Crop,Fruit
+68,Apples,Food Crop,Fruit
+69,Grapes,Food Crop,Fruit
+70,Christmas Trees,Ornamental Crop,
+71,Other Tree Crops,,
+72,Citrus,Food Crop,Fruit
+74,Pecans,Food Crop,
+75,Almonds,Food Crop,
+76,Walnuts,Food Crop,
+77,Pears,Food Crop,Fruit
+81,Clouds/No Data,,
+82,Developed,,
+83,Water,,
+87,Wetlands,,
+88,Nonag/Undefined,,
+92,Aquaculture,,
+111,Open Water,,
+112,Perennial Ice/Snow,,
+121,Developed/Open Space,,
+122,Developed/Low Intensity,,
+123,Developed/Med Intensity,,
+124,Developed/High Intensity,,
+131,Barren,,
+141,Deciduous Forest,,
+142,Evergreen Forest,,
+143,Mixed Forest,,
+152,Shrubland,,
+176,Grassland/Pasture,,
+190,Woody Wetlands,,
+195,Herbaceous Wetlands,,
+204,Pistachios,Food Crop,
+205,Triticale,Food Crop,Grain
+206,Carrots,Food Crop,Root Or Tuber Vegetable
+207,Asparagus,Food Crop,Vegetable
+208,Garlic,Food Crop,
+209,Cantaloupes,Food Crop,Fruit
+210,Prunes,Food Crop,Fruit
+211,Olives,Oil Crop,
+212,Oranges,Food Crop,Fruit
+213,Honeydew Melons,Food Crop,Fruit
+214,Broccoli,Food Crop,Vegetable
+215,Avocados,Food Crop,Fruit
+216,Peppers,Food Crop,Fruiting Vegetable
+217,Pomegranates,Food Crop,Fruit
+218,Nectarines,Food Crop,Fruit
+219,Greens,,
+220,Plums,Food Crop,Fruit
+221,Strawberries,Food Crop,Fruit
+222,Squash,Food Crop,Fruiting Vegetable
+223,Apricots,Food Crop,Fruit
+224,Vetch,,
+225,Dbl Crop WinWht/Corn,Food Crop,Grain
+226,Dbl Crop Oats/Corn,Food Crop,Grain
+227,Lettuce,Food Crop,Leafy Vegetable
+228,Dbl Crop Triticale/Corn,Food Crop,Grain
+229,Pumpkins,Food Crop,Fruiting Vegetable
+230,Dbl Crop Lettuce/Durum Wht,Food Crop,
+231,Dbl Crop Lettuce/Cantaloupe,Food Crop,
+232,Dbl Crop Lettuce/Cotton,,
+233,Dbl Crop Lettuce/Barley,Food Crop,
+234,Dbl Crop Durum Wht/Sorghum,Food Crop,Grain
+235,Dbl Crop Barley/Sorghum,Food Crop,Grain
+236,Dbl Crop WinWht/Sorghum,Food Crop,Grain
+237,Dbl Crop Barley/Corn,Food Crop,Grain
+238,Dbl Crop WinWht/Cotton,,
+239,Dbl Crop Soybeans/Cotton,,
+240,Dbl Crop Soybeans/Oats,Food Crop,Grain
+241,Dbl Crop Corn/Soybeans,Food Crop,Grain
+242,Blueberries,Food Crop,Fruit
+243,Cabbage,Food Crop,Leafy Vegetable
+244,Cauliflower,Food Crop,Vegetable
+245,Celery,Food Crop,Leafy Vegetable
+246,Radishes,Food Crop,Root Or Tuber Vegetable
+247,Turnips,Food Crop,Root Or Tuber Vegetable
+248,Eggplants,Food Crop,Fruiting Vegetable
+249,Gourds,Food Crop,Fruiting Vegetable
+250,Cranberries,Food Crop,Fruit
+254,Dbl Crop Barley/Soybeans,Food Crop,Grain
