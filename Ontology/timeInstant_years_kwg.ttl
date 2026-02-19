@@ -1,0 +1,304 @@
+﻿@prefix time: <http://www.w3.org/2006/time#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdf4j: <http://rdf4j.org/schema/rdf4j#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1982> a time:Instant;
+  rdfs:label "1982";
+  time:inXSDgYear "1982"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1952> a time:Instant;
+  rdfs:label "1952";
+  time:inXSDgYear "1952"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.2006> a time:Instant;
+  rdfs:label "2006";
+  time:inXSDgYear "2006"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1990> a time:Instant;
+  rdfs:label "1990";
+  time:inXSDgYear "1990"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1979> a time:Instant;
+  rdfs:label "1979";
+  time:inXSDgYear "1979"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.2005> a time:Instant;
+  rdfs:label "2005";
+  time:inXSDgYear "2005"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1989> a time:Instant;
+  rdfs:label "1989";
+  time:inXSDgYear "1989"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.2019> a time:Instant;
+  rdfs:label "2019";
+  time:inXSDgYear "2019"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.2018> a time:Instant;
+  rdfs:label "2018";
+  time:inXSDgYear "2018"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.2014> a time:Instant;
+  rdfs:label "2014";
+  time:inXSDgYear "2014"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1975> a time:Instant;
+  rdfs:label "1975";
+  time:inXSDgYear "1975"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1993> a time:Instant;
+  rdfs:label "1993";
+  time:inXSDgYear "1993"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.2023> a time:Instant;
+  rdfs:label "2023";
+  time:inXSDgYear "2023"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1972> a time:Instant;
+  rdfs:label "1972";
+  time:inXSDgYear "1972"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.2011> a time:Instant;
+  rdfs:label "2011";
+  time:inXSDgYear "2011"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1984> a time:Instant;
+  rdfs:label "1984";
+  time:inXSDgYear "1984"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1995> a time:Instant;
+  rdfs:label "1995";
+  time:inXSDgYear "1995"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.2000> a time:Instant;
+  rdfs:label "2000";
+  time:inXSDgYear "2000"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1955> a time:Instant;
+  rdfs:label "1955";
+  time:inXSDgYear "1955"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1971> a time:Instant;
+  rdfs:label "1971";
+  time:inXSDgYear "1971"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.2008> a time:Instant;
+  rdfs:label "2008";
+  time:inXSDgYear "2008"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1970> a time:Instant;
+  rdfs:label "1970";
+  time:inXSDgYear "1970"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1961> a time:Instant;
+  rdfs:label "1961";
+  time:inXSDgYear "1961"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1958> a time:Instant;
+  rdfs:label "1958";
+  time:inXSDgYear "1958"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1966> a time:Instant;
+  rdfs:label "1966";
+  time:inXSDgYear "1966"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1988> a time:Instant;
+  rdfs:label "1988";
+  time:inXSDgYear "1988"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1965> a time:Instant;
+  rdfs:label "1965";
+  time:inXSDgYear "1965"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1973> a time:Instant;
+  rdfs:label "1973";
+  time:inXSDgYear "1973"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.2007> a time:Instant;
+  rdfs:label "2007";
+  time:inXSDgYear "2007"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.2002> a time:Instant;
+  rdfs:label "2002";
+  time:inXSDgYear "2002"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1991> a time:Instant;
+  rdfs:label "1991";
+  time:inXSDgYear "1991"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1992> a time:Instant;
+  rdfs:label "1992";
+  time:inXSDgYear "1992"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1957> a time:Instant;
+  rdfs:label "1957";
+  time:inXSDgYear "1957"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.2012> a time:Instant;
+  rdfs:label "2012";
+  time:inXSDgYear "2012"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1997> a time:Instant;
+  rdfs:label "1997";
+  time:inXSDgYear "1997"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1969> a time:Instant;
+  rdfs:label "1969";
+  time:inXSDgYear "1969"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1967> a time:Instant;
+  rdfs:label "1967";
+  time:inXSDgYear "1967"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1985> a time:Instant;
+  rdfs:label "1985";
+  time:inXSDgYear "1985"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.2010> a time:Instant;
+  rdfs:label "2010";
+  time:inXSDgYear "2010"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1986> a time:Instant;
+  rdfs:label "1986";
+  time:inXSDgYear "1986"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.2001> a time:Instant;
+  rdfs:label "2001";
+  time:inXSDgYear "2001"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1976> a time:Instant;
+  rdfs:label "1976";
+  time:inXSDgYear "1976"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.2004> a time:Instant;
+  rdfs:label "2004";
+  time:inXSDgYear "2004"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1983> a time:Instant;
+  rdfs:label "1983";
+  time:inXSDgYear "1983"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1978> a time:Instant;
+  rdfs:label "1978";
+  time:inXSDgYear "1978"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1960> a time:Instant;
+  rdfs:label "1960";
+  time:inXSDgYear "1960"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1962> a time:Instant;
+  rdfs:label "1962";
+  time:inXSDgYear "1962"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.2015> a time:Instant;
+  rdfs:label "2015";
+  time:inXSDgYear "2015"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.2022> a time:Instant;
+  rdfs:label "2022";
+  time:inXSDgYear "2022"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1994> a time:Instant;
+  rdfs:label "1994";
+  time:inXSDgYear "1994"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1951> a time:Instant;
+  rdfs:label "1951";
+  time:inXSDgYear "1951"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1980> a time:Instant;
+  rdfs:label "1980";
+  time:inXSDgYear "1980"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.2016> a time:Instant;
+  rdfs:label "2016";
+  time:inXSDgYear "2016"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1954> a time:Instant;
+  rdfs:label "1954";
+  time:inXSDgYear "1954"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1968> a time:Instant;
+  rdfs:label "1968";
+  time:inXSDgYear "1968"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1953> a time:Instant;
+  rdfs:label "1953";
+  time:inXSDgYear "1953"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1999> a time:Instant;
+  rdfs:label "1999";
+  time:inXSDgYear "1999"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1987> a time:Instant;
+  rdfs:label "1987";
+  time:inXSDgYear "1987"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1996> a time:Instant;
+  rdfs:label "1996";
+  time:inXSDgYear "1996"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1964> a time:Instant;
+  rdfs:label "1964";
+  time:inXSDgYear "1964"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1956> a time:Instant;
+  rdfs:label "1956";
+  time:inXSDgYear "1956"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1981> a time:Instant;
+  rdfs:label "1981";
+  time:inXSDgYear "1981"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1959> a time:Instant;
+  rdfs:label "1959";
+  time:inXSDgYear "1959"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.2013> a time:Instant;
+  rdfs:label "2013";
+  time:inXSDgYear "2013"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1974> a time:Instant;
+  rdfs:label "1974";
+  time:inXSDgYear "1974"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.2021> a time:Instant;
+  rdfs:label "2021";
+  time:inXSDgYear "2021"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.2009> a time:Instant;
+  rdfs:label "2009";
+  time:inXSDgYear "2009"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.2017> a time:Instant;
+  rdfs:label "2017";
+  time:inXSDgYear "2017"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.2003> a time:Instant;
+  rdfs:label "2003";
+  time:inXSDgYear "2003"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1950> a time:Instant;
+  rdfs:label "1950";
+  time:inXSDgYear "1950"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1963> a time:Instant;
+  rdfs:label "1963";
+  time:inXSDgYear "1963"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1977> a time:Instant;
+  rdfs:label "1977";
+  time:inXSDgYear "1977"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.1998> a time:Instant;
+  rdfs:label "1998";
+  time:inXSDgYear "1998"^^xsd:gYear .
+
+<http://stko-kwg.geog.ucsb.edu/lod/resource/instant.2020> a time:Instant;
+  rdfs:label "2020";
+  time:inXSDgYear "2020"^^xsd:gYear .
