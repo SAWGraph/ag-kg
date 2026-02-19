@@ -74,6 +74,6 @@ for _, row in df.iterrows():
 with open("crop_triples.ttl", "w") as f:
     f.write("\n".join(triples))
 
-print("✅ RDF triples successfully generated and saved to 'crop_triples.ttl'")
+print("✅ RDF triples successfully generated and saved to 'crop_category_triples.ttl'")
 
 
