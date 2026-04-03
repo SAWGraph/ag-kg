@@ -5,6 +5,43 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+
+#################################################################
+#    Ontology
+#################################################################
+
+<http://w3id.org/sawgraph/v1/ag> rdf:type owl:Ontology ;
+                                  terms:contributor "Adrita Barua"@en ;
+                                  terms:created "2025-10-20" ;
+                                  terms:creator "The SAWGraph Project"@en ;
+                                  terms:description "This ontology supports the SAWGraph"@en ;
+                                  terms:title "Ontology for USDA's CropScape Crop Categories"@en ;
+                                  owl:versionInfo "1.0"@en .
+
+
+#################################################################
+#    Annotation Properties
+#################################################################
+
+###  http://purl.org/dc/terms/contributor
+terms:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+terms:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+terms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+terms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+terms:title rdf:type owl:AnnotationProperty .
+
 #################################################################
 #    Classes
 #################################################################
