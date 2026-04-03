@@ -4,327 +4,569 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+#################################################################
+#    Classes
+#################################################################
 
-ag:cropCategory.FeedCrop a ag:cropCategory,
-        owl:NamedIndividual ;
-    rdfs:label "Crop Category for FeedCrop"^^xsd:string .
-
-ag:cropCategory.FiberCrop a ag:cropCategory,
-        owl:NamedIndividual ;
-    rdfs:label "Crop Category for FiberCrop"^^xsd:string .
-
-ag:cropCategory.FoodCrop a ag:cropCategory,
-        owl:NamedIndividual ;
-    rdfs:label "Crop Category for FoodCrop"^^xsd:string .
-
-ag:cropCategory.IndustrialCrop a ag:cropCategory,
-        owl:NamedIndividual ;
-    rdfs:label "Crop Category for IndustrialCrop"^^xsd:string .
-
-ag:cropCategory.OilCrop a ag:cropCategory,
-        owl:NamedIndividual ;
-    rdfs:label "Crop Category for OilCrop"^^xsd:string .
-
-ag:cropCategory.OrnamentalCrop a ag:cropCategory,
-        owl:NamedIndividual ;
-    rdfs:label "Crop Category for OrnamentalCrop"^^xsd:string .
-
-ag:cropSubCategory.Fruit a ag:cropSubCategory,
-        owl:NamedIndividual ;
-    rdfs:label "Crop Sub Category for Fruit"^^xsd:string .
-
-ag:cropSubCategory.FruitingVegetable a ag:cropSubCategory,
-        owl:NamedIndividual ;
-    rdfs:label "Crop Sub Category for FruitingVegetable"^^xsd:string .
-
-ag:cropSubCategory.Grain a ag:cropSubCategory,
-        owl:NamedIndividual ;
-    rdfs:label "Crop Sub Category for Grain"^^xsd:string .
-
-ag:cropSubCategory.LeafyVegetable a ag:cropSubCategory,
-        owl:NamedIndividual ;
-    rdfs:label "Crop Sub Category for LeafyVegetable"^^xsd:string .
-
-ag:cropSubCategory.LegumeOrNut a ag:cropSubCategory,
-        owl:NamedIndividual ;
-    rdfs:label "Crop Sub Category for LegumeOrNut"^^xsd:string .
-
-ag:cropSubCategory.RootOrTuberVegetable a ag:cropSubCategory,
-        owl:NamedIndividual ;
-    rdfs:label "Crop Sub Category for RootOrTuberVegetable"^^xsd:string .
-
-ag:cropSubCategory.Vegetable a ag:cropSubCategory,
-        owl:NamedIndividual ;
-    rdfs:label "Crop Sub Category for Vegetable"^^xsd:string .
-
+###  http://w3id.org/sawgraph/v1/ag#cropCategory
 ag:cropCategory rdf:type owl:Class ;
-                         rdfs:label "Crop Category" .
+                rdfs:label "Crop Category" .
 
+
+###  http://w3id.org/sawgraph/v1/ag#cropSubCategory
 ag:cropSubCategory rdf:type owl:Class ;
-                         rdfs:label "Crop Sub-Category" ;
-		   rdfs:subClassOf ag:cropCategory .
+                   rdfs:subClassOf ag:cropCategory ;
+                   rdfs:label "Crop Sub-Category" .
 
+
+#################################################################
+#    Individuals — Crop Categories
+#################################################################
+###  http://w3id.org/sawgraph/v1/ag#cropCategory.FeedCrop
+ag:cropCategory.FeedCrop rdf:type owl:NamedIndividual ,
+                                  ag:cropCategory ;
+                         rdfs:label "Crop Category for FeedCrop"^^xsd:string .
+
+
+###  http://w3id.org/sawgraph/v1/ag#cropCategory.FiberCrop
+ag:cropCategory.FiberCrop rdf:type owl:NamedIndividual ,
+                                   ag:cropCategory ;
+                          rdfs:label "Crop Category for FiberCrop"^^xsd:string .
+
+
+###  http://w3id.org/sawgraph/v1/ag#cropCategory.FoodCrop
+ag:cropCategory.FoodCrop rdf:type owl:NamedIndividual ,
+                                  ag:cropCategory ;
+                         rdfs:label "Crop Category for FoodCrop"^^xsd:string .
+
+
+###  http://w3id.org/sawgraph/v1/ag#cropCategory.IndustrialCrop
+ag:cropCategory.IndustrialCrop rdf:type owl:NamedIndividual ,
+                                        ag:cropCategory ;
+                               rdfs:label "Crop Category for IndustrialCrop"^^xsd:string .
+
+
+###  http://w3id.org/sawgraph/v1/ag#cropCategory.OilCrop
+ag:cropCategory.OilCrop rdf:type owl:NamedIndividual ,
+                                 ag:cropCategory ;
+                        rdfs:label "Crop Category for OilCrop"^^xsd:string .
+
+
+###  http://w3id.org/sawgraph/v1/ag#cropCategory.OrnamentalCrop
+ag:cropCategory.OrnamentalCrop rdf:type owl:NamedIndividual ,
+                                        ag:cropCategory ;
+                               rdfs:label "Crop Category for OrnamentalCrop"^^xsd:string .
+
+
+#################################################################
+#    Individuals — Crop Sub-Categories
+#################################################################
+
+###  http://w3id.org/sawgraph/v1/ag#cropSubCategory.Fruit
+ag:cropSubCategory.Fruit rdf:type owl:NamedIndividual ,
+                                  ag:cropSubCategory ;
+                         rdfs:label "Crop Sub Category for Fruit"^^xsd:string .
+
+
+###  http://w3id.org/sawgraph/v1/ag#cropSubCategory.FruitingVegetable
+ag:cropSubCategory.FruitingVegetable rdf:type owl:NamedIndividual ,
+                                             ag:cropSubCategory ;
+                                     rdfs:label "Crop Sub Category for FruitingVegetable"^^xsd:string .
+
+
+###  http://w3id.org/sawgraph/v1/ag#cropSubCategory.Grain
+ag:cropSubCategory.Grain rdf:type owl:NamedIndividual ,
+                                  ag:cropSubCategory ;
+                         rdfs:label "Crop Sub Category for Grain"^^xsd:string .
+
+
+###  http://w3id.org/sawgraph/v1/ag#cropSubCategory.LeafyVegetable
+ag:cropSubCategory.LeafyVegetable rdf:type owl:NamedIndividual ,
+                                          ag:cropSubCategory ;
+                                  rdfs:label "Crop Sub Category for LeafyVegetable"^^xsd:string .
+
+
+###  http://w3id.org/sawgraph/v1/ag#cropSubCategory.LegumeOrNut
+ag:cropSubCategory.LegumeOrNut rdf:type owl:NamedIndividual ,
+                                        ag:cropSubCategory ;
+                               rdfs:label "Crop Sub Category for LegumeOrNut"^^xsd:string .
+
+
+###  http://w3id.org/sawgraph/v1/ag#cropSubCategory.RootOrTuberVegetable
+ag:cropSubCategory.RootOrTuberVegetable rdf:type owl:NamedIndividual ,
+                                                 ag:cropSubCategory ;
+                                        rdfs:label "Crop Sub Category for RootOrTuberVegetable"^^xsd:string .
+
+
+###  http://w3id.org/sawgraph/v1/ag#cropSubCategory.Vegetable
+ag:cropSubCategory.Vegetable rdf:type owl:NamedIndividual ,
+                                      ag:cropSubCategory ;
+                             rdfs:label "Crop Sub Category for Vegetable"^^xsd:string .
+
+
+#################################################################
+#    Crop Category & Sub-Category Assignments
+#################################################################
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.1
 kwgr:croplandObservableProperty.1 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+                                  ag:hasCropSubCategory ag:cropSubCategory.Grain .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.2
 kwgr:croplandObservableProperty.2 ag:hasCropCategory ag:cropCategory.FiberCrop .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.3
 kwgr:croplandObservableProperty.3 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+                                  ag:hasCropSubCategory ag:cropSubCategory.Grain .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.4
 kwgr:croplandObservableProperty.4 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+                                  ag:hasCropSubCategory ag:cropSubCategory.Grain .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.5
 kwgr:croplandObservableProperty.5 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+                                  ag:hasCropSubCategory ag:cropSubCategory.Grain .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.6
 kwgr:croplandObservableProperty.6 ag:hasCropCategory ag:cropCategory.OilCrop .
 
-kwgr:croplandObservableProperty.10 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.LegumeOrNut .
 
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.10
+kwgr:croplandObservableProperty.10 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                   ag:hasCropSubCategory ag:cropSubCategory.LegumeOrNut .
+
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.11
 kwgr:croplandObservableProperty.11 ag:hasCropCategory ag:cropCategory.IndustrialCrop .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.12
 kwgr:croplandObservableProperty.12 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+                                   ag:hasCropSubCategory ag:cropSubCategory.Grain .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.13
 kwgr:croplandObservableProperty.13 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+                                   ag:hasCropSubCategory ag:cropSubCategory.Grain .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.14
 kwgr:croplandObservableProperty.14 ag:hasCropCategory ag:cropCategory.FoodCrop .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.21
 kwgr:croplandObservableProperty.21 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+                                   ag:hasCropSubCategory ag:cropSubCategory.Grain .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.22
 kwgr:croplandObservableProperty.22 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+                                   ag:hasCropSubCategory ag:cropSubCategory.Grain .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.23
 kwgr:croplandObservableProperty.23 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+                                   ag:hasCropSubCategory ag:cropSubCategory.Grain .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.24
 kwgr:croplandObservableProperty.24 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+                                   ag:hasCropSubCategory ag:cropSubCategory.Grain .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.25
 kwgr:croplandObservableProperty.25 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+                                   ag:hasCropSubCategory ag:cropSubCategory.Grain .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.26
 kwgr:croplandObservableProperty.26 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+                                   ag:hasCropSubCategory ag:cropSubCategory.Grain .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.27
 kwgr:croplandObservableProperty.27 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+                                   ag:hasCropSubCategory ag:cropSubCategory.Grain .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.28
 kwgr:croplandObservableProperty.28 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+                                   ag:hasCropSubCategory ag:cropSubCategory.Grain .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.29
 kwgr:croplandObservableProperty.29 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+                                   ag:hasCropSubCategory ag:cropSubCategory.Grain .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.30
 kwgr:croplandObservableProperty.30 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+                                   ag:hasCropSubCategory ag:cropSubCategory.Grain .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.31
 kwgr:croplandObservableProperty.31 ag:hasCropCategory ag:cropCategory.OilCrop .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.32
 kwgr:croplandObservableProperty.32 ag:hasCropCategory ag:cropCategory.FoodCrop .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.33
 kwgr:croplandObservableProperty.33 ag:hasCropCategory ag:cropCategory.OilCrop .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.34
 kwgr:croplandObservableProperty.34 ag:hasCropCategory ag:cropCategory.OilCrop .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.35
 kwgr:croplandObservableProperty.35 ag:hasCropCategory ag:cropCategory.OilCrop .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.36
 kwgr:croplandObservableProperty.36 ag:hasCropCategory ag:cropCategory.FeedCrop .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.37
 kwgr:croplandObservableProperty.37 ag:hasCropCategory ag:cropCategory.FeedCrop .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.38
 kwgr:croplandObservableProperty.38 ag:hasCropCategory ag:cropCategory.FeedCrop .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.39
 kwgr:croplandObservableProperty.39 ag:hasCropCategory ag:cropCategory.FoodCrop .
 
-kwgr:croplandObservableProperty.41 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.RootOrTuberVegetable .
 
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.41
+kwgr:croplandObservableProperty.41 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                   ag:hasCropSubCategory ag:cropSubCategory.RootOrTuberVegetable .
+
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.42
 kwgr:croplandObservableProperty.42 ag:hasCropCategory ag:cropCategory.FoodCrop .
 
-kwgr:croplandObservableProperty.43 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.RootOrTuberVegetable .
 
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.43
+kwgr:croplandObservableProperty.43 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                   ag:hasCropSubCategory ag:cropSubCategory.RootOrTuberVegetable .
+
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.45
 kwgr:croplandObservableProperty.45 ag:hasCropCategory ag:cropCategory.FoodCrop .
 
-kwgr:croplandObservableProperty.46 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.RootOrTuberVegetable .
 
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.46
+kwgr:croplandObservableProperty.46 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                   ag:hasCropSubCategory ag:cropSubCategory.RootOrTuberVegetable .
+
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.47
 kwgr:croplandObservableProperty.47 ag:hasCropCategory ag:cropCategory.FoodCrop .
 
-kwgr:croplandObservableProperty.48 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
 
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.48
+kwgr:croplandObservableProperty.48 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                   ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.49
 kwgr:croplandObservableProperty.49 ag:hasCropCategory ag:cropCategory.FoodCrop .
 
-kwgr:croplandObservableProperty.50 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.FruitingVegetable .
 
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.50
+kwgr:croplandObservableProperty.50 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                   ag:hasCropSubCategory ag:cropSubCategory.FruitingVegetable .
+
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.51
 kwgr:croplandObservableProperty.51 ag:hasCropCategory ag:cropCategory.FoodCrop .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.52
 kwgr:croplandObservableProperty.52 ag:hasCropCategory ag:cropCategory.FoodCrop .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.53
 kwgr:croplandObservableProperty.53 ag:hasCropCategory ag:cropCategory.FoodCrop .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.54
 kwgr:croplandObservableProperty.54 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.FruitingVegetable .
+                                   ag:hasCropSubCategory ag:cropSubCategory.FruitingVegetable .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.55
 kwgr:croplandObservableProperty.55 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+                                   ag:hasCropSubCategory ag:cropSubCategory.Fruit .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.58
 kwgr:croplandObservableProperty.58 ag:hasCropCategory ag:cropCategory.FeedCrop .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.60
 kwgr:croplandObservableProperty.60 ag:hasCropCategory ag:cropCategory.FeedCrop .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.66
 kwgr:croplandObservableProperty.66 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+                                   ag:hasCropSubCategory ag:cropSubCategory.Fruit .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.67
 kwgr:croplandObservableProperty.67 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+                                   ag:hasCropSubCategory ag:cropSubCategory.Fruit .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.68
 kwgr:croplandObservableProperty.68 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+                                   ag:hasCropSubCategory ag:cropSubCategory.Fruit .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.69
 kwgr:croplandObservableProperty.69 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+                                   ag:hasCropSubCategory ag:cropSubCategory.Fruit .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.70
 kwgr:croplandObservableProperty.70 ag:hasCropCategory ag:cropCategory.OrnamentalCrop .
 
-kwgr:croplandObservableProperty.72 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
 
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.72
+kwgr:croplandObservableProperty.72 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                   ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.74
 kwgr:croplandObservableProperty.74 ag:hasCropCategory ag:cropCategory.FoodCrop .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.75
 kwgr:croplandObservableProperty.75 ag:hasCropCategory ag:cropCategory.FoodCrop .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.76
 kwgr:croplandObservableProperty.76 ag:hasCropCategory ag:cropCategory.FoodCrop .
 
-kwgr:croplandObservableProperty.77 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
 
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.77
+kwgr:croplandObservableProperty.77 ag:hasCropCategory ag:cropCategory.FoodCrop ;
+                                   ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.204
 kwgr:croplandObservableProperty.204 ag:hasCropCategory ag:cropCategory.FoodCrop .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.205
 kwgr:croplandObservableProperty.205 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+                                    ag:hasCropSubCategory ag:cropSubCategory.Grain .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.206
 kwgr:croplandObservableProperty.206 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.RootOrTuberVegetable .
+                                    ag:hasCropSubCategory ag:cropSubCategory.RootOrTuberVegetable .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.207
 kwgr:croplandObservableProperty.207 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Vegetable .
+                                    ag:hasCropSubCategory ag:cropSubCategory.Vegetable .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.208
 kwgr:croplandObservableProperty.208 ag:hasCropCategory ag:cropCategory.FoodCrop .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.209
 kwgr:croplandObservableProperty.209 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+                                    ag:hasCropSubCategory ag:cropSubCategory.Fruit .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.210
 kwgr:croplandObservableProperty.210 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+                                    ag:hasCropSubCategory ag:cropSubCategory.Fruit .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.211
 kwgr:croplandObservableProperty.211 ag:hasCropCategory ag:cropCategory.OilCrop .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.212
 kwgr:croplandObservableProperty.212 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+                                    ag:hasCropSubCategory ag:cropSubCategory.Fruit .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.213
 kwgr:croplandObservableProperty.213 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+                                    ag:hasCropSubCategory ag:cropSubCategory.Fruit .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.214
 kwgr:croplandObservableProperty.214 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Vegetable .
+                                    ag:hasCropSubCategory ag:cropSubCategory.Vegetable .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.215
 kwgr:croplandObservableProperty.215 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+                                    ag:hasCropSubCategory ag:cropSubCategory.Fruit .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.216
 kwgr:croplandObservableProperty.216 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.FruitingVegetable .
+                                    ag:hasCropSubCategory ag:cropSubCategory.FruitingVegetable .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.217
 kwgr:croplandObservableProperty.217 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+                                    ag:hasCropSubCategory ag:cropSubCategory.Fruit .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.218
 kwgr:croplandObservableProperty.218 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+                                    ag:hasCropSubCategory ag:cropSubCategory.Fruit .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.220
 kwgr:croplandObservableProperty.220 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+                                    ag:hasCropSubCategory ag:cropSubCategory.Fruit .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.221
 kwgr:croplandObservableProperty.221 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+                                    ag:hasCropSubCategory ag:cropSubCategory.Fruit .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.222
 kwgr:croplandObservableProperty.222 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.FruitingVegetable .
+                                    ag:hasCropSubCategory ag:cropSubCategory.FruitingVegetable .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.223
 kwgr:croplandObservableProperty.223 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+                                    ag:hasCropSubCategory ag:cropSubCategory.Fruit .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.225
 kwgr:croplandObservableProperty.225 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+                                    ag:hasCropSubCategory ag:cropSubCategory.Grain .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.226
 kwgr:croplandObservableProperty.226 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+                                    ag:hasCropSubCategory ag:cropSubCategory.Grain .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.227
 kwgr:croplandObservableProperty.227 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.LeafyVegetable .
+                                    ag:hasCropSubCategory ag:cropSubCategory.LeafyVegetable .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.228
 kwgr:croplandObservableProperty.228 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+                                    ag:hasCropSubCategory ag:cropSubCategory.Grain .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.229
 kwgr:croplandObservableProperty.229 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.FruitingVegetable .
+                                    ag:hasCropSubCategory ag:cropSubCategory.FruitingVegetable .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.230
 kwgr:croplandObservableProperty.230 ag:hasCropCategory ag:cropCategory.FoodCrop .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.231
 kwgr:croplandObservableProperty.231 ag:hasCropCategory ag:cropCategory.FoodCrop .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.233
 kwgr:croplandObservableProperty.233 ag:hasCropCategory ag:cropCategory.FoodCrop .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.234
 kwgr:croplandObservableProperty.234 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+                                    ag:hasCropSubCategory ag:cropSubCategory.Grain .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.235
 kwgr:croplandObservableProperty.235 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+                                    ag:hasCropSubCategory ag:cropSubCategory.Grain .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.236
 kwgr:croplandObservableProperty.236 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+                                    ag:hasCropSubCategory ag:cropSubCategory.Grain .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.237
 kwgr:croplandObservableProperty.237 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+                                    ag:hasCropSubCategory ag:cropSubCategory.Grain .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.240
 kwgr:croplandObservableProperty.240 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+                                    ag:hasCropSubCategory ag:cropSubCategory.Grain .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.241
 kwgr:croplandObservableProperty.241 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+                                    ag:hasCropSubCategory ag:cropSubCategory.Grain .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.242
 kwgr:croplandObservableProperty.242 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+                                    ag:hasCropSubCategory ag:cropSubCategory.Fruit .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.243
 kwgr:croplandObservableProperty.243 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.LeafyVegetable .
+                                    ag:hasCropSubCategory ag:cropSubCategory.LeafyVegetable .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.244
 kwgr:croplandObservableProperty.244 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Vegetable .
+                                    ag:hasCropSubCategory ag:cropSubCategory.Vegetable .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.245
 kwgr:croplandObservableProperty.245 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.LeafyVegetable .
+                                    ag:hasCropSubCategory ag:cropSubCategory.LeafyVegetable .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.246
 kwgr:croplandObservableProperty.246 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.RootOrTuberVegetable .
+                                    ag:hasCropSubCategory ag:cropSubCategory.RootOrTuberVegetable .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.247
 kwgr:croplandObservableProperty.247 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.RootOrTuberVegetable .
+                                    ag:hasCropSubCategory ag:cropSubCategory.RootOrTuberVegetable .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.248
 kwgr:croplandObservableProperty.248 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.FruitingVegetable .
+                                    ag:hasCropSubCategory ag:cropSubCategory.FruitingVegetable .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.249
 kwgr:croplandObservableProperty.249 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.FruitingVegetable .
+                                    ag:hasCropSubCategory ag:cropSubCategory.FruitingVegetable .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.250
 kwgr:croplandObservableProperty.250 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Fruit .
+                                    ag:hasCropSubCategory ag:cropSubCategory.Fruit .
 
+
+###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.254
 kwgr:croplandObservableProperty.254 ag:hasCropCategory ag:cropCategory.FoodCrop ;
-                                 ag:hasCropSubCategory ag:cropSubCategory.Grain .
+                                    ag:hasCropSubCategory ag:cropSubCategory.Grain .
+
