@@ -1,4 +1,8 @@
-Soil data mapping: 
+## Soil Map Unit, Component, Horizon, and Observation Mapping
+
+The generated RDF represents soil information using the following hierarchy:
+
+```text
 S2 Cell
   └── sosa:isFeatureOfInterestOf
         SoilMapUnitS2OverlapObservation
@@ -13,5 +17,6 @@ SoilMapUnit
   │                  SoilMapUnitObservation
   │                    ├── sosa:observedProperty → om_r / cec7_r / ph1to1h2o_r / texture
   │                    └── sosa:hasSimpleResult → value
+  │
   └── sosa:isFeatureOfInterestOf → SoilMapUnitObservationCollection
         └── sosa:hasMember → SoilMapUnitObservation
