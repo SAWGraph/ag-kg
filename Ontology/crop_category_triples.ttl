@@ -10,7 +10,7 @@
 #    Ontology
 #################################################################
 
-<http://w3id.org/sawgraph/v1/ag> rdf:type owl:Ontology ;
+<http://w3id.org/sawgraph/v1/ag/crop-categories> rdf:type owl:Ontology ;
                                   terms:contributor "Adrita Barua"@en ;
                                   terms:created "2025-10-20" ;
                                   terms:creator "The SAWGraph Project"@en ;
