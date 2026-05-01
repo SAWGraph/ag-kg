@@ -7,16 +7,33 @@ S2 Cell
   └── sosa:isFeatureOfInterestOf
         SoilMapUnitS2OverlapObservation
           ├── kwg-ont:observedOverlapWith → SoilMapUnit
-          ├── sosa:observedProperty → s2OverlapObservableProperty.soilMapUnitOverlapArea
+          ├── sosa:observedProperty → kwgr:s2OverlapObservableProperty.soilMapUnitOverlapArea
           └── sosa:hasSimpleResult → overlap area
 
+
 SoilMapUnit
-  ├── kwg-ont:hasSoilComponent → SoilComponent
-  │     └── kwg-ont:hasSoilHorizon → SoilHorizon
-  │            └── sosa:isFeatureOfInterestOf / reverse of sosa:hasFeatureOfInterest
-  │                  SoilMapUnitObservation
-  │                    ├── sosa:observedProperty → om_r / cec7_r / ph1to1h2o_r / texture
-  │                    └── sosa:hasSimpleResult → value
+  ├── kwg-ont:soilMapUnitName → map unit name
+  ├── kwg-ont:soilMapUnitSymbol → map unit symbol
+  ├── kwg-ont:soilMapUnitKey → mukey
   │
-  └── sosa:isFeatureOfInterestOf → SoilMapUnitObservationCollection
-        └── sosa:hasMember → SoilMapUnitObservation
+  ├── sosa:isFeatureOfInterestOf
+  │       SoilMapUnitObservationCollection
+  │         └── sosa:hasMember → SoilMapUnitObservation
+  │
+  └── ag:hasSoilComponent
+          SoilComponent
+            ├── ag:soilComponentKey → cokey
+            ├── ag:soilComponentName → compname
+            ├── ag:componentAreaPercentage → comppct_r
+            │
+            └── ag:hasSoilHorizon
+                    SoilHorizon
+                      ├── ag:soilHorizonKey → chkey
+                      ├── ag:soilHorizonName → hzname
+                      ├── ag:soilHorizonTopDepthCm → hzdept_r
+                      ├── ag:soilHorizonBottomDepthCm → hzdepb_r
+                      │
+                      └── SoilMapUnitObservation
+                            ├── sosa:hasFeatureOfInterest → SoilHorizon
+                            ├── sosa:observedProperty → agr:soilObservableProperty.*
+                            └── sosa:hasSimpleResult → property value
