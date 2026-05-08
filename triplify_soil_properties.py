@@ -454,13 +454,6 @@ def graphify_mapunit_record(record: dict, coverer: S2RegionCoverer) -> Graph:
         graph.add((map_unit_iri, KWG_ONT.soilSurveyArea, KWGR[f"soilSurveyArea.{lkey}"]))
 
     # Horizon-level observations are grouped by horizon, not by map unit.
-    # Mapunit-level retrieval remains possible through:
-    #   SoilMapUnit -> ag:hasSoilComponent -> SoilComponent -> ag:hasSoilHorizon -> SoilHorizon
-    #              -> sosa:isFeatureOfInterestOf -> SoilHorizonObservationCollection
-    #              -> sosa:hasMember -> SoilHorizonObservation
-    #
-    # We therefore do NOT create kwg-ont:SoilMapUnitObservationCollection here.
-
     # Horizon/component vocabulary minted in the SAWGraph agriculture ontology namespace.
     # These keep the existing observation pattern, but preserve the SSURGO hierarchy:
     # mapunit -> component -> horizon -> observation.
@@ -578,7 +571,7 @@ def graphify_mapunit_record(record: dict, coverer: S2RegionCoverer) -> Graph:
 
             graph.add((observation_iri, SOSA.hasSimpleResult, _literal_for_value(value)))
 
-    # KEEP original S2 overlap logic
+    # KEEP original S2 overlap logic from KWG
     geometry = record.get("geometry")
     if geometry is not None:
         s2_object = s2_approximation(geometry=geometry)
