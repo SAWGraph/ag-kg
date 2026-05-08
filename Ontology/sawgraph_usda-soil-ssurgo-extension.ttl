@@ -1,0 +1,297 @@
+@prefix ag: <http://w3id.org/sawgraph/v1/ag#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kwg-ont: <http://stko-kwg.geog.ucsb.edu/lod/ontology/> .
+
+###  http://w3id.org/sawgraph/v1/ag/usda-soil-ssurgo-extension
+<http://w3id.org/sawgraph/v1/ag/usda-soil-ssurgo-extension>
+    rdf:type owl:Ontology ;
+    terms:creator "Adrita"@en ;
+    terms:description "This ontology extension defines SSURGO soil component, horizon, horizon observation collection, horizon observation, and soil observable property terms used in the SAWGraph soil data pipeline."@en ;
+    terms:title "SAWGraph SSURGO Soil Component and Horizon Extension"@en ;
+    owl:versionInfo "1.0"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/creator
+terms:creator rdf:type owl:AnnotationProperty .
+###  http://purl.org/dc/terms/description
+terms:description rdf:type owl:AnnotationProperty .
+###  http://purl.org/dc/terms/title
+terms:title rdf:type owl:AnnotationProperty .
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+###  http://www.w3.org/2004/02/skos/core#description
+skos:description rdf:type owl:AnnotationProperty .
+###  http://www.w3.org/2004/02/skos/core#example
+skos:example rdf:type owl:AnnotationProperty .
+###  http://schema.org/domainIncludes
+schema:domainIncludes rdf:type owl:AnnotationProperty .
+###  http://schema.org/rangeIncludes
+schema:rangeIncludes rdf:type owl:AnnotationProperty .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://w3id.org/sawgraph/v1/ag#hasSoilComponent
+ag:hasSoilComponent
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "has soil component" ;
+    rdfs:comment "Relates a SSURGO soil map unit to a soil component occurring within that map unit." ;
+    schema:domainIncludes kwg-ont:SoilMapUnit ;
+    schema:rangeIncludes ag:SoilComponent .
+
+###  http://w3id.org/sawgraph/v1/ag#hasSoilHorizon
+ag:hasSoilHorizon
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "has soil horizon" ;
+    rdfs:comment "Relates a SSURGO soil component to one of its soil horizons." ;
+    schema:domainIncludes ag:SoilComponent ;
+    schema:rangeIncludes ag:SoilHorizon .
+
+###  http://w3id.org/sawgraph/v1/ag#horizonOfComponent
+ag:horizonOfComponent
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "horizon of component" ;
+    rdfs:comment "Relates a soil horizon back to the soil component that it belongs to." ;
+    owl:inverseOf ag:hasSoilHorizon ;
+    schema:domainIncludes ag:SoilHorizon ;
+    schema:rangeIncludes ag:SoilComponent .
+
+#################################################################
+#    Data Properties
+#################################################################
+
+###  http://w3id.org/sawgraph/v1/ag#soilComponentKey
+ag:soilComponentKey
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "soil component key" ;
+    rdfs:comment "The SSURGO component key, corresponding to the component.cokey column." ;
+    skos:description "A non-connotative identifier used to uniquely identify a component record in the SSURGO component table." ;
+    schema:domainIncludes ag:SoilComponent ;
+    schema:rangeIncludes xsd:string .
+
+###  http://w3id.org/sawgraph/v1/ag#soilComponentName
+ag:soilComponentName
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "soil component name" ;
+    rdfs:comment "The SSURGO component name, corresponding to the component.compname column." ;
+    skos:description "The name of the soil component, often corresponding to a named soil series such as Skerry, Colton, or Adams." ;
+    schema:domainIncludes ag:SoilComponent ;
+    schema:rangeIncludes xsd:string .
+
+###  http://w3id.org/sawgraph/v1/ag#componentAreaPercentage
+ag:componentAreaPercentage
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "component area percentage" ;
+    rdfs:comment "The representative percentage of a soil map unit occupied by a given soil component." ;
+    skos:description "Corresponds to the SSURGO component.comppct_r column. It indicates the estimated spatial proportion of the map unit area occupied by the component. This is a horizontal/spatial proportion, not a depth value." ;
+    schema:domainIncludes ag:SoilComponent ;
+    schema:rangeIncludes xsd:decimal .
+
+###  http://w3id.org/sawgraph/v1/ag#soilHorizonKey
+ag:soilHorizonKey
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "soil horizon key" ;
+    rdfs:comment "The SSURGO horizon key, corresponding to the chorizon.chkey column." ;
+    skos:description "A non-connotative identifier used to uniquely identify a horizon record in the SSURGO chorizon table." ;
+    schema:domainIncludes ag:SoilHorizon ;
+    schema:rangeIncludes xsd:string .
+
+###  http://w3id.org/sawgraph/v1/ag#soilHorizonName
+ag:soilHorizonName
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "soil horizon name" ;
+    rdfs:comment "The horizon designation, corresponding to the chorizon.hzname column." ;
+    skos:description "A soil horizon designation such as A, Ap, E, Bt1, Bs1, or C. The designation identifies a layer within a specific soil component profile." ;
+    schema:domainIncludes ag:SoilHorizon ;
+    schema:rangeIncludes xsd:string .
+
+###  http://w3id.org/sawgraph/v1/ag#soilHorizonTopDepthCm
+ag:soilHorizonTopDepthCm
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "soil horizon top depth in centimeters" ;
+    rdfs:comment "The upper boundary depth of the soil horizon in centimeters from the soil surface." ;
+    skos:description "Corresponds to the SSURGO chorizon.hzdept_r column. A value of 0 indicates that the horizon begins at the soil surface." ;
+    schema:domainIncludes ag:SoilHorizon ;
+    schema:rangeIncludes xsd:decimal .
+
+###  http://w3id.org/sawgraph/v1/ag#soilHorizonBottomDepthCm
+ag:soilHorizonBottomDepthCm
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "soil horizon bottom depth in centimeters" ;
+    rdfs:comment "The lower boundary depth of the soil horizon in centimeters from the soil surface." ;
+    skos:description "Corresponds to the SSURGO chorizon.hzdepb_r column. Together with soilHorizonTopDepthCm, this defines the vertical interval of the horizon." ;
+    schema:domainIncludes ag:SoilHorizon ;
+    schema:rangeIncludes xsd:decimal .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://w3id.org/sawgraph/v1/ag#SoilComponent
+ag:SoilComponent
+    rdf:type owl:Class ;
+    rdfs:subClassOf sosa:FeatureOfInterest ;
+    rdfs:label "Soil Component" ;
+    rdfs:comment "This class denotes SSURGO soil component instances occurring within a soil map unit." ;
+    skos:description "A soil component represents a soil type, soil series, or miscellaneous area that occurs within a soil map unit. Components represent horizontal/spatial variation inside a map unit. Each component may have its own soil profile and multiple horizons." .
+
+###  http://w3id.org/sawgraph/v1/ag#SoilHorizon
+ag:SoilHorizon
+    rdf:type owl:Class ;
+    rdfs:subClassOf sosa:FeatureOfInterest ;
+    rdfs:label "Soil Horizon" ;
+    rdfs:comment "This class denotes SSURGO soil horizon instances belonging to a soil component." ;
+    skos:description "A soil horizon is a depth-based layer within a soil component profile. Horizon-level attributes include organic matter, cation exchange capacity, pH, and texture. A horizon is defined within a component and should not be interpreted independently of the component." .
+
+###  http://w3id.org/sawgraph/v1/ag#SoilObservableProperty
+ag:SoilObservableProperty
+    rdf:type owl:Class ;
+    rdfs:subClassOf sosa:ObservableProperty ;
+    rdfs:label "Soil Observable Property" ;
+    rdfs:comment "This class denotes observable soil properties used in the SAWGraph soil data pipeline." .
+
+###  http://w3id.org/sawgraph/v1/ag#SoilHorizonObservationCollection
+ag:SoilHorizonObservationCollection
+    rdf:type owl:Class ;
+    rdfs:subClassOf sosa:ObservationCollection ,
+        [
+            rdf:type owl:Restriction ;
+            owl:onProperty sosa:hasFeatureOfInterest ;
+            owl:allValuesFrom ag:SoilHorizon
+        ] ,
+        [
+            rdf:type owl:Restriction ;
+            owl:onProperty sosa:hasMember ;
+            owl:allValuesFrom ag:SoilHorizonObservation
+        ] ;
+    rdfs:label "Soil Horizon Observation Collection" ;
+    rdfs:comment "This class denotes a collection of soil property observations for a specific soil horizon." ;
+    skos:description "In the generated RDF, each soil horizon is linked to a soil horizon observation collection using sosa:isFeatureOfInterestOf, and the collection itself uses sosa:hasFeatureOfInterest to identify the horizon. The collection groups all property observations for that horizon." .
+
+###  http://w3id.org/sawgraph/v1/ag#SoilHorizonObservation
+ag:SoilHorizonObservation
+    rdf:type owl:Class ;
+    rdfs:subClassOf sosa:Observation ,
+        [
+            rdf:type owl:Restriction ;
+            owl:onProperty sosa:observedProperty ;
+            owl:allValuesFrom ag:SoilObservableProperty
+        ] ;
+    rdfs:label "Soil Horizon Observation" ;
+    rdfs:comment "This class denotes an observation of a soil property grouped under a soil horizon observation collection." ;
+    skos:description "A soil horizon observation records one soil property value. The feature-of-interest context is provided by the containing SoilHorizonObservationCollection, which points to the corresponding SoilHorizon." .
+
+#################################################################
+#    Soil observable property individuals
+#################################################################
+
+###  http://w3id.org/sawgraph/v1/ag#soilObservableProperty.organic_matter
+ag:soilObservableProperty.organic_matter
+    rdf:type owl:NamedIndividual ,
+        ag:SoilObservableProperty ;
+    rdfs:label "organic matter" ;
+    skos:definition "Representative organic matter content of a soil horizon." ;
+    skos:description "Corresponds to the SSURGO chorizon.om_r column. Organic matter is reported as the representative value for the horizon and is commonly expressed as a percentage by weight of the less than 2 mm soil material." .
+
+###  http://w3id.org/sawgraph/v1/ag#soilObservableProperty.cation_exchange_capacity_ph_7
+ag:soilObservableProperty.cation_exchange_capacity_ph_7
+    rdf:type owl:NamedIndividual ,
+        ag:SoilObservableProperty ;
+    rdfs:label "cation exchange capacity at pH 7" ;
+    skos:definition "Representative cation exchange capacity of a soil horizon measured or estimated at pH 7." ;
+    skos:description "Corresponds to the SSURGO chorizon.cec7_r column. It represents the amount of readily exchangeable cations in the soil horizon at pH 7, typically reported as a representative value." .
+
+###  http://w3id.org/sawgraph/v1/ag#soilObservableProperty.ph_1_to_1_water
+ag:soilObservableProperty.ph_1_to_1_water
+    rdf:type owl:NamedIndividual ,
+        ag:SoilObservableProperty ;
+    rdfs:label "pH 1 to 1 water" ;
+    skos:definition "Representative soil pH of a horizon measured in a 1:1 soil-water mixture." ;
+    skos:description "Corresponds to the SSURGO chorizon.ph1to1h2o_r column. It represents the acidity or alkalinity of the soil horizon using the 1:1 soil-water method." .
+
+###  http://w3id.org/sawgraph/v1/ag#soilObservableProperty.texture
+ag:soilObservableProperty.texture
+    rdf:type owl:NamedIndividual ,
+        ag:SoilObservableProperty ;
+    rdfs:label "texture" ;
+    skos:definition "Texture description of a soil horizon." ;
+    skos:description "Corresponds to the SSURGO chtexturegrp.texdesc column joined through chorizon.chkey. If multiple texture descriptions occur for the same horizon, the generated RDF represents them as multiple sosa:hasSimpleResult values on the same texture observation." .
+
+#################################################################
+#    General axioms
+#################################################################
+
+[
+    rdf:type owl:Restriction ;
+    owl:onProperty ag:hasSoilComponent ;
+    owl:someValuesFrom ag:SoilComponent ;
+    rdfs:subClassOf kwg-ont:SoilMapUnit
+] .
+
+[
+    rdf:type owl:Restriction ;
+    owl:onProperty ag:hasSoilHorizon ;
+    owl:someValuesFrom ag:SoilHorizon ;
+    rdfs:subClassOf ag:SoilComponent
+] .
+
+[
+    rdf:type owl:Restriction ;
+    owl:onProperty ag:soilComponentKey ;
+    owl:someValuesFrom xsd:string ;
+    rdfs:subClassOf ag:SoilComponent
+] .
+
+[
+    rdf:type owl:Restriction ;
+    owl:onProperty ag:soilComponentName ;
+    owl:someValuesFrom xsd:string ;
+    rdfs:subClassOf ag:SoilComponent
+] .
+
+[
+    rdf:type owl:Restriction ;
+    owl:onProperty ag:componentAreaPercentage ;
+    owl:someValuesFrom xsd:decimal ;
+    rdfs:subClassOf ag:SoilComponent
+] .
+
+[
+    rdf:type owl:Restriction ;
+    owl:onProperty ag:soilHorizonKey ;
+    owl:someValuesFrom xsd:string ;
+    rdfs:subClassOf ag:SoilHorizon
+] .
+
+[
+    rdf:type owl:Restriction ;
+    owl:onProperty ag:soilHorizonName ;
+    owl:someValuesFrom xsd:string ;
+    rdfs:subClassOf ag:SoilHorizon
+] .
+
+[
+    rdf:type owl:Restriction ;
+    owl:onProperty ag:soilHorizonTopDepthCm ;
+    owl:someValuesFrom xsd:decimal ;
+    rdfs:subClassOf ag:SoilHorizon
+] .
+
+[
+    rdf:type owl:Restriction ;
+    owl:onProperty ag:soilHorizonBottomDepthCm ;
+    owl:someValuesFrom xsd:decimal ;
+    rdfs:subClassOf ag:SoilHorizon
+] .
