@@ -5,35 +5,35 @@ The generated RDF represents soil information using the following hierarchy:
 ```text
 S2 Cell
   └── sosa:isFeatureOfInterestOf
-        SoilMapUnitS2OverlapObservation
-          ├── kwg-ont:observedOverlapWith → SoilMapUnit
+        kwg-ont:SoilMapUnitS2OverlapObservation
+          ├── kwg-ont:observedOverlapWith → kwg-ont:SoilMapUnit
           ├── sosa:observedProperty → kwgr:s2OverlapObservableProperty.soilMapUnitOverlapArea
           └── sosa:hasSimpleResult → overlap area
 
 
-SoilMapUnit
-  ├── kwg-ont:soilMapUnitName → map unit name
-  ├── kwg-ont:soilMapUnitSymbol → map unit symbol
-  ├── kwg-ont:soilMapUnitKey → mukey
-  │
-  ├── sosa:isFeatureOfInterestOf
-  │       SoilMapUnitObservationCollection
-  │         └── sosa:hasMember → SoilMapUnitObservation
+kwg-ont:SoilMapUnit
+  ├── kwg-ont:soilMapUnitName → mu.muname
+  ├── kwg-ont:soilMapUnitSymbol → mu.musym
+  ├── kwg-ont:soilMapUnitKey → mu.mukey
+  ├── kwg-ont:soilSurveyArea → kwgr:soilSurveyArea.<lkey>
   │
   └── ag:hasSoilComponent
-          SoilComponent
-            ├── ag:soilComponentKey → cokey
-            ├── ag:soilComponentName → compname
-            ├── ag:componentAreaPercentage → comppct_r
-            │
-            └── ag:hasSoilHorizon
-                    SoilHorizon
-                      ├── ag:soilHorizonKey → chkey
-                      ├── ag:soilHorizonName → hzname
-                      ├── ag:soilHorizonTopDepthCm → hzdept_r
-                      ├── ag:soilHorizonBottomDepthCm → hzdepb_r
-                      │
-                      └── SoilMapUnitObservation
-                            ├── sosa:hasFeatureOfInterest → SoilHorizon
-                            ├── sosa:observedProperty → agr:soilObservableProperty.*
-                            └── sosa:hasSimpleResult → property value
+        ag:SoilComponent
+          ├── ag:soilComponentKey → c.cokey
+          ├── ag:soilComponentName → c.compname
+          ├── ag:componentAreaPercentage → c.comppct_r
+          │
+          └── ag:hasSoilHorizon
+                ag:SoilHorizon
+                  ├── ag:soilHorizonKey → hz.chkey
+                  ├── ag:soilHorizonName → hz.hzname
+                  ├── ag:soilHorizonTopDepthCm → hz.hzdept_r
+                  ├── ag:soilHorizonBottomDepthCm → hz.hzdepb_r
+                  │
+                  └── sosa:isFeatureOfInterestOf
+                        ag:SoilHorizonObservationCollection
+                          ├── sosa:hasFeatureOfInterest → ag:SoilHorizon
+                          └── sosa:hasMember
+                                ag:SoilHorizonObservation
+                                  ├── sosa:observedProperty → ag:soilObservableProperty.*
+                                  └── sosa:hasSimpleResult → value
