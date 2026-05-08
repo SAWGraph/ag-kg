@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load CSV
-df = pd.read_csv("Crop_Category_mapping.csv")
+df = pd.read_csv("Metadata/Crop_Category_mapping.csv")
 
 # Define prefixes
 prefixes = """@prefix ag: <http://w3id.org/sawgraph/v1/ag#> .

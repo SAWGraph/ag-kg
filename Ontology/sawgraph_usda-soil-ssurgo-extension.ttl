@@ -10,13 +10,14 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix kwg-ont: <http://stko-kwg.geog.ucsb.edu/lod/ontology/> .
 
-###  http://w3id.org/sawgraph/v1/ag/usda-soil-ssurgo-extension
-<http://w3id.org/sawgraph/v1/ag/usda-soil-ssurgo-extension>
-    rdf:type owl:Ontology ;
-    terms:creator "Adrita"@en ;
-    terms:description "This ontology extension defines SSURGO soil component, horizon, horizon observation collection, horizon observation, and soil observable property terms used in the SAWGraph soil data pipeline."@en ;
-    terms:title "SAWGraph SSURGO Soil Component and Horizon Extension"@en ;
-    owl:versionInfo "1.0"@en .
+#################################################################
+#    Ontology
+#################################################################
+<http://w3id.org/sawgraph/v1/ag/usda-soil-ssurgo-extension> rdf:type owl:Ontology ;
+                                                    terms:creator "Adrita"@en ;
+                                                    terms:description "This ontology extension defines SSURGO soil component, horizon, horizon observation collection, horizon observation, and soil observable property terms used in the SAWGraph soil data pipeline."@en ;
+                                                    terms:title "SAWGraph SSURGO Soil Component and Horizon Extension"@en ;
+                                                    owl:versionInfo "1.0"@en .
 
 #################################################################
 #    Annotation properties
@@ -24,18 +25,32 @@
 
 ###  http://purl.org/dc/terms/creator
 terms:creator rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/dc/terms/description
 terms:description rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/dc/terms/title
 terms:title rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3.org/2004/02/skos/core#definition
 skos:definition rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3.org/2004/02/skos/core#description
 skos:description rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3.org/2004/02/skos/core#example
 skos:example rdf:type owl:AnnotationProperty .
+
+
 ###  http://schema.org/domainIncludes
 schema:domainIncludes rdf:type owl:AnnotationProperty .
+
+
 ###  http://schema.org/rangeIncludes
 schema:rangeIncludes rdf:type owl:AnnotationProperty .
 
