@@ -25,18 +25,32 @@
 
 ###  http://purl.org/dc/terms/creator
 terms:creator rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/dc/terms/description
 terms:description rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/dc/terms/title
 terms:title rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3.org/2004/02/skos/core#definition
 skos:definition rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3.org/2004/02/skos/core#description
 skos:description rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3.org/2004/02/skos/core#example
 skos:example rdf:type owl:AnnotationProperty .
+
+
 ###  http://schema.org/domainIncludes
 schema:domainIncludes rdf:type owl:AnnotationProperty .
+
+
 ###  http://schema.org/rangeIncludes
 schema:rangeIncludes rdf:type owl:AnnotationProperty .
 
