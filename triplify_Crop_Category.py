@@ -156,7 +156,7 @@ for _, row in df.iterrows():
 """)
 
 # Write to TTL file
-output_file = "crop_category_triples.ttl"
+output_file = "sawgraph_crop_categories.ttl"
 
 with open(output_file, "w", encoding="utf-8") as f:
     f.write("\n".join(triples))
