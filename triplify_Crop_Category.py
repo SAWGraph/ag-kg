@@ -3,77 +3,162 @@ import pandas as pd
 # Load CSV
 df = pd.read_csv("Metadata/Crop_Category_mapping.csv")
 
-# Define prefixes
-prefixes = """@prefix ag: <http://w3id.org/sawgraph/v1/ag#> .
-@prefix kwgr: <http://w3id.org/sawgraph/v1/kwgr#> .
+def clean_name(value):
+    """Remove spaces and handle missing values."""
+    if pd.isna(value):
+        return None
+    value = str(value).strip()
+    return value.replace(" ", "") if value else None
+
+triples = []
+
+# Prefixes
+triples.append("""@prefix ag: <http://w3id.org/sawgraph/v1/ag#> .
+@prefix kwgr: <http://stko-kwg.geog.ucsb.edu/lod/resource/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix terms: <http://purl.org/dc/terms/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+""")
 
-"""
+# Ontology header
+triples.append("""
+#################################################################
+#    Ontology
+#################################################################
 
-triples = [prefixes]
+<http://w3id.org/sawgraph/v1/ag/crop-categories> rdf:type owl:Ontology ;
+                                  terms:contributor "Adrita Barua"@en ;
+                                  terms:created "2025-10-20" ;
+                                  terms:creator "The SAWGraph Project"@en ;
+                                  terms:description "This ontology supports the SAWGraph"@en ;
+                                  terms:title "Ontology for USDA's CropScape Crop Categories"@en ;
+                                  owl:versionInfo "1.0"@en .
+""")
+
+# Annotation properties
+triples.append("""
+#################################################################
+#    Annotation Properties
+#################################################################
+
+###  http://purl.org/dc/terms/contributor
+terms:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+terms:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+terms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+terms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+terms:title rdf:type owl:AnnotationProperty .
+""")
+
+# Classes
+triples.append("""
+#################################################################
+#    Classes
+#################################################################
+
+###  http://w3id.org/sawgraph/v1/ag#cropCategory
+ag:cropCategory rdf:type owl:Class ;
+                rdfs:label "Crop Category" .
+
+
+###  http://w3id.org/sawgraph/v1/ag#cropSubCategory
+ag:cropSubCategory rdf:type owl:Class ;
+                   rdfs:subClassOf ag:cropCategory ;
+                   rdfs:label "Crop Sub-Category" .
+""")
 
 # Collect unique crop categories and subcategories
 crop_categories = set()
 crop_subcategories = set()
 
 for _, row in df.iterrows():
-    crop_category = str(row[2]).strip() if pd.notna(row[2]) else None
-    crop_subcategory = str(row[3]).strip() if pd.notna(row[3]) else None
+    crop_category = clean_name(row[2])
+    crop_subcategory = clean_name(row[3])
 
     if crop_category:
-        crop_categories.add(crop_category.replace(" ", ""))
+        crop_categories.add(crop_category)
+
     if crop_subcategory:
-        crop_subcategories.add(crop_subcategory.replace(" ", ""))
+        crop_subcategories.add(crop_subcategory)
 
-# Define all unique crop categories
+# Crop category individuals
+triples.append("""
+#################################################################
+#    Individuals — Crop Categories
+#################################################################
+""")
+
 for category in sorted(crop_categories):
-    triples.append(f"ag:cropCategory.{category} a ag:cropCategory,")
-    triples.append("        owl:NamedIndividual ;")
-    triples.append(f'    rdfs:label "Crop Category for {category}"^^xsd:string .\n')
+    triples.append(f"""###  http://w3id.org/sawgraph/v1/ag#cropCategory.{category}
+ag:cropCategory.{category} rdf:type owl:NamedIndividual ,
+                                  ag:cropCategory ;
+                         rdfs:label "Crop Category for {category}"^^xsd:string .
+""")
 
-# Define all unique crop subcategories
+# Crop subcategory individuals
+triples.append("""
+#################################################################
+#    Individuals — Crop Sub-Categories
+#################################################################
+""")
+
 for subcat in sorted(crop_subcategories):
-    triples.append(f"ag:cropSubCategory.{subcat} a ag:cropSubCategory,")
-    triples.append("        owl:NamedIndividual ;")
-    triples.append(f'    rdfs:label "Crop Sub Category for {subcat}"^^xsd:string .\n')
+    triples.append(f"""###  http://w3id.org/sawgraph/v1/ag#cropSubCategory.{subcat}
+ag:cropSubCategory.{subcat} rdf:type owl:NamedIndividual ,
+                                     ag:cropSubCategory ;
+                            rdfs:label "Crop Sub Category for {subcat}"^^xsd:string .
+""")
 
-# Add the class definitions (as in your example)
-triples.append("ag:cropCategory rdf:type owl:Class ;")
-triples.append('                         rdfs:label "Crop Category" .\n')
+# Crop category assignments
+triples.append("""
+#################################################################
+#    Crop Category & Sub-Category Assignments
+#################################################################
+""")
 
-triples.append("ag:cropSubCategory rdf:type owl:Class ;")
-triples.append('                         rdfs:label "Crop Sub-Category" ;')
-triples.append("		   rdfs:subClassOf ag:cropCategory .\n")
-
-# Generate triples for each observable property
 for _, row in df.iterrows():
     obs_id = str(row[0]).strip()
-    crop_category = str(row[2]).strip() if pd.notna(row[2]) else None
-    crop_subcategory = str(row[3]).strip() if pd.notna(row[3]) else None
+    crop_category = clean_name(row[2])
+    crop_subcategory = clean_name(row[3])
 
-    # Skip if no observable property ID
-    if not obs_id:
+    if not obs_id or obs_id.lower() == "nan":
         continue
 
-    # Build property triple
-    property_triple = f"kwgr:croplandObservableProperty.{obs_id}"
+    subject = f"kwgr:croplandObservableProperty.{obs_id}"
 
-    relations = []
-    if crop_category:
-        relations.append(f"ag:hasCropCategory ag:cropCategory.{crop_category.replace(' ', '')}")
-    if crop_subcategory:
-        relations.append(f"ag:hasCropSubCategory ag:cropSubCategory.{crop_subcategory.replace(' ', '')}")
+    if crop_category and crop_subcategory:
+        triples.append(f"""###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.{obs_id}
+{subject} ag:hasCropCategory ag:cropCategory.{crop_category} ;
+{' ' * (len(subject) + 1)}ag:hasCropSubCategory ag:cropSubCategory.{crop_subcategory} .
+""")
 
-    # Only write if there's at least one valid relation
-    if relations:
-        triples.append(f"{property_triple} " + " ;\n                                 ".join(relations) + " .\n")
+    elif crop_category:
+        triples.append(f"""###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.{obs_id}
+{subject} ag:hasCropCategory ag:cropCategory.{crop_category} .
+""")
+
+    elif crop_subcategory:
+        triples.append(f"""###  http://stko-kwg.geog.ucsb.edu/lod/resource/croplandObservableProperty.{obs_id}
+{subject} ag:hasCropSubCategory ag:cropSubCategory.{crop_subcategory} .
+""")
 
 # Write to TTL file
-with open("crop_triples.ttl", "w") as f:
+output_file = "crop_category_triples.ttl"
+
+with open(output_file, "w", encoding="utf-8") as f:
     f.write("\n".join(triples))
 
-print("✅ RDF triples successfully generated and saved to 'crop_category_triples.ttl'")
-
-
+print(f"✅ RDF triples successfully generated and saved to '{output_file}'")
