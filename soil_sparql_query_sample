@@ -1,4 +1,4 @@
-#to query the ontology structure and all the properties
+#to query the soil ontology structure and all the properties
 
 PREFIX kwgr: <http://stko-kwg.geog.ucsb.edu/lod/resource/>
 PREFIX kwg-ont: <http://stko-kwg.geog.ucsb.edu/lod/ontology/>
