@@ -1,0 +1,68 @@
+#to query the ontology structure and all the properties
+
+PREFIX kwgr: <http://stko-kwg.geog.ucsb.edu/lod/resource/>
+PREFIX kwg-ont: <http://stko-kwg.geog.ucsb.edu/lod/ontology/>
+PREFIX ag: <http://w3id.org/sawgraph/v1/ag#>
+PREFIX agr: <http://w3id.org/sawgraph/v1/agr#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT
+  ?s2Cell
+  ?overlapArea
+  ?mapUnit
+  ?mapUnitName
+  ?component
+  ?componentName
+  ?componentPct
+  ?horizon
+  ?horizonName
+  ?topDepth
+  ?bottomDepth
+  ?property
+  ?value
+WHERE {
+
+  # --- S2 CELL → MAP UNIT ---
+  ?s2Cell sosa:isFeatureOfInterestOf ?overlapObs .
+
+  ?overlapObs
+      rdf:type kwg-ont:SoilMapUnitS2OverlapObservation ;
+      kwg-ont:observedOverlapWith ?mapUnit ;
+      sosa:hasSimpleResult ?overlapArea .
+
+  # --- MAP UNIT ---
+  ?mapUnit
+      rdf:type kwg-ont:SoilMapUnit ;
+      kwg-ont:soilMapUnitName ?mapUnitName ;
+      ag:hasSoilComponent ?component .
+
+  # --- COMPONENT ---
+  ?component
+      rdf:type ag:SoilComponent ;
+      ag:soilComponentName ?componentName ;
+      ag:componentAreaPercentage ?componentPct ;
+      ag:hasSoilHorizon ?horizon .
+
+  # --- HORIZON ---
+  ?horizon
+      rdf:type ag:SoilHorizon ;
+      ag:soilHorizonName ?horizonName ;
+      ag:soilHorizonTopDepthCm ?topDepth ;
+      ag:soilHorizonBottomDepthCm ?bottomDepth ;
+      sosa:isFeatureOfInterestOf ?soilHorizonObsCollection .
+
+  # --- SOIL HORIZON OBSERVATION COLLECTION ---
+  ?soilHorizonObsCollection
+      rdf:type ag:SoilHorizonObservationCollection ;
+      sosa:hasFeatureOfInterest ?horizon ;
+      sosa:hasMember ?soilHorizonObservation .
+
+  # --- SOIL HORIZON OBSERVATIONS ---
+  ?soilHorizonObservation
+      rdf:type ag:SoilHorizonObservation ;
+      sosa:observedProperty ?property ;
+      sosa:hasSimpleResult ?value .
+}
+ORDER BY ?mapUnit DESC(?componentPct) ?topDepth ?property
