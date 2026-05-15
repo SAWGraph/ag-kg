@@ -177,6 +177,15 @@ ag:SoilObservableProperty
     rdfs:label "Soil Observable Property" ;
     rdfs:comment "This class denotes observable soil properties used in the SAWGraph soil data pipeline." .
 
+###  http://w3id.org/sawgraph/v1/ag#SoilTexture
+ag:SoilTexture
+    rdf:type owl:Class ;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "Soil Texture" ;
+    rdfs:comment "This class denotes controlled vocabulary individuals for SSURGO soil texture descriptions." ;
+    skos:description "Each SoilTexture individual represents a distinct texture description from SSURGO chtexturegrp.texdesc, such as fine sandy loam, gravelly fine sandy loam, or sandy loam." .
+
+
 ###  http://w3id.org/sawgraph/v1/ag#SoilHorizonObservationCollection
 ag:SoilHorizonObservationCollection
     rdf:type owl:Class ;
@@ -203,10 +212,15 @@ ag:SoilHorizonObservation
             rdf:type owl:Restriction ;
             owl:onProperty sosa:observedProperty ;
             owl:allValuesFrom ag:SoilObservableProperty
+        ] ,
+        [
+            rdf:type owl:Restriction ;
+            owl:onProperty sosa:hasResult ;
+            owl:allValuesFrom ag:SoilTexture
         ] ;
     rdfs:label "Soil Horizon Observation" ;
     rdfs:comment "This class denotes an observation of a soil property grouped under a soil horizon observation collection." ;
-    skos:description "A soil horizon observation records one soil property value. The feature-of-interest context is provided by the containing SoilHorizonObservationCollection, which points to the corresponding SoilHorizon." .
+    skos:description "A soil horizon observation records one soil property value. Numeric properties use sosa:hasSimpleResult with literal values, while texture observations use sosa:hasResult to point to controlled ag:SoilTexture individuals. The feature-of-interest context is provided by the containing SoilHorizonObservationCollection, which points to the corresponding SoilHorizon." .
 
 #################################################################
 #    Soil observable property individuals
@@ -242,7 +256,7 @@ ag:soilObservableProperty.texture
         ag:SoilObservableProperty ;
     rdfs:label "texture" ;
     skos:definition "Texture description of a soil horizon." ;
-    skos:description "Corresponds to the SSURGO chtexturegrp.texdesc column joined through chorizon.chkey. If multiple texture descriptions occur for the same horizon, the generated RDF represents them as multiple sosa:hasSimpleResult values on the same texture observation." .
+    skos:description "Corresponds to the SSURGO chtexturegrp.texdesc column joined through chorizon.chkey. Texture is categorical, so generated RDF represents texture values as controlled ag:SoilTexture individuals linked from the texture observation using sosa:hasResult." .
 
 #################################################################
 #    General axioms

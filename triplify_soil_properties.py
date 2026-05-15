@@ -1,6 +1,7 @@
 import argparse
 from typing import Generator
 import os
+import re
 from multiprocessing import Pool
 from functools import partial
 
@@ -435,6 +436,18 @@ def _literal_for_value(value):
 
 
 
+def _safe_iri_fragment(value) -> str:
+    """Create a compact IRI-safe suffix for categorical values such as texture descriptions."""
+    text = str(value).strip().lower()
+    text = re.sub(r"[^a-z0-9]+", "_", text)
+    return text.strip("_") or "value"
+
+
+def _soil_texture_iri(texture_value) -> URIRef:
+    """Return the controlled vocabulary individual IRI for a soil texture value."""
+    return AG[f"soilTexture.{_safe_iri_fragment(texture_value)}"]
+
+
 def graphify_mapunit_record(record: dict, coverer: S2RegionCoverer) -> Graph:
     graph = Graph()
 
@@ -454,6 +467,13 @@ def graphify_mapunit_record(record: dict, coverer: S2RegionCoverer) -> Graph:
         graph.add((map_unit_iri, KWG_ONT.soilSurveyArea, KWGR[f"soilSurveyArea.{lkey}"]))
 
     # Horizon-level observations are grouped by horizon, not by map unit.
+    # Mapunit-level retrieval remains possible through:
+    #   SoilMapUnit -> ag:hasSoilComponent -> SoilComponent -> ag:hasSoilHorizon -> SoilHorizon
+    #              -> sosa:isFeatureOfInterestOf -> SoilHorizonObservationCollection
+    #              -> sosa:hasMember -> SoilHorizonObservation
+    #
+    # We therefore do NOT create kwg-ont:SoilMapUnitObservationCollection here.
+
     # Horizon/component vocabulary minted in the SAWGraph agriculture ontology namespace.
     # These keep the existing observation pattern, but preserve the SSURGO hierarchy:
     # mapunit -> component -> horizon -> observation.
@@ -569,9 +589,18 @@ def graphify_mapunit_record(record: dict, coverer: S2RegionCoverer) -> Graph:
             if horizon_collection_iri is not None:
                 graph.add((horizon_collection_iri, SOSA.hasMember, observation_iri))
 
-            graph.add((observation_iri, SOSA.hasSimpleResult, _literal_for_value(value)))
+            if key == "texture":
+                # Texture is categorical, so represent it as a controlled vocabulary individual
+                # instead of a string literal. Multiple texture rows for the same horizon become
+                # multiple sosa:hasResult links from the same texture observation.
+                texture_iri = _soil_texture_iri(value)
+                graph.add((texture_iri, RDF.type, AG.SoilTexture))
+                graph.add((texture_iri, RDFS.label, Literal(str(value).strip(), datatype=XSD.string)))
+                graph.add((observation_iri, SOSA.hasResult, texture_iri))
+            else:
+                graph.add((observation_iri, SOSA.hasSimpleResult, _literal_for_value(value)))
 
-    # KEEP original S2 overlap logic from KWG
+    # KEEP original S2 overlap logic
     geometry = record.get("geometry")
     if geometry is not None:
         s2_object = s2_approximation(geometry=geometry)
