@@ -256,7 +256,7 @@ ag:soilObservableProperty.texture
         ag:SoilObservableProperty ;
     rdfs:label "texture" ;
     skos:definition "Texture description of a soil horizon." ;
-    skos:description "Corresponds to the SSURGO chtexturegrp.texdesc column joined through chorizon.chkey. Texture is categorical, so generated RDF represents texture values as controlled ag:SoilTexture individuals linked from the texture observation using sosa:hasResult." .
+    skos:description "Corresponds to the SSURGO chtexturegrp.texdesc column. Texture is categorical, so generated RDF represents texture values as controlled ag:SoilTexture individuals." .
 
 #################################################################
 #    General axioms
